@@ -1,3 +1,4 @@
+import java.nio.channels.NonWritableChannelException;
 import java.util.Formatter;
 
 /**
@@ -23,6 +24,7 @@ public class IntList {
     public IntList(int first0, IntList rest0) {
         first = first0;
         rest = rest0;
+
     }
 
     /**
@@ -37,7 +39,6 @@ public class IntList {
      * Returns a list equal to L with all elements squared. Destructive.
      */
     public static void dSquareList(IntList L) {
-
         while (L != null) {
             L.first = L.first * L.first;
             L = L.rest;
@@ -82,7 +83,14 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        if(A==null) return B;
+        if(B==null) return A;
+        IntList L=A;
+        while(L.rest!=null){
+            L=L.rest;
+        }
+        L.rest=B;
+        return A;
     }
 
     /**
@@ -91,7 +99,25 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        if (A==null) return B;
+        if (B==null) return A;
+        IntList pHead=new IntList(0,null);
+        IntList temp=pHead;
+        IntList pHeadA=A;
+        IntList pHeadB=B;
+        while(pHeadA!=null){
+            IntList NewNode=new IntList(pHeadA.first,null);
+            temp.rest=NewNode;
+            temp=temp.rest;
+            pHeadA=pHeadA.rest;
+        }
+        while(pHeadB!=null){
+            IntList NewNode=new IntList(pHeadB.first,null);
+            temp.rest=NewNode;
+            temp=temp.rest;
+            pHeadB=pHeadB.rest;
+        }
+        return pHead.rest;
     }
 
 
