@@ -74,3 +74,4 @@ public class TestPlanetConstructor {
         checkStringEquals(p.imgFileName, pCopy.imgFileName, "path to image");
     }
 }
+
