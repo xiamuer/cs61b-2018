@@ -6,7 +6,7 @@ public class Planet {
     public double xxVel;
     public double yyVel;
     public double mass;
-    String imgFileName;
+    public String imgFileName;
     public Planet(double xP,double yP,double xV,double yV,double m,String img){
             this.xxPos=xP;
             this.yyPos=yP;
@@ -15,9 +15,9 @@ public class Planet {
             this.mass=m;
             this.imgFileName=img;
     }
-    public Planet(){
-        this(0,0,0,0,0,null);
-    }
+//    public Planet(){
+//        this(0,0,0,0,0,null);
+//    }
     public Planet(Planet p){
         this(p.xxPos,p.yyPos,p.xxVel,p.yyVel,p.mass,p.imgFileName);
     }
