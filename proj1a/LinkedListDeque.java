@@ -1,10 +1,10 @@
-public class LinkedListDeque <Item>{
+public class LinkedListDeque <T>{
     private class ItemNode{
         public ItemNode pre;   //指针域(前)
-        public Item item;      //数据域
+        public T item;      //数据域
         public ItemNode next;  //指针域(后)
         //节点初始构造时的赋值
-         private ItemNode(ItemNode p,Item i,ItemNode n){
+         private ItemNode(ItemNode p,T i,ItemNode n){
             pre=p;
             item=i;
             next=n;
@@ -22,13 +22,13 @@ public class LinkedListDeque <Item>{
         size=0;
     }
     //如果创建队列的时候传值了
-    public LinkedListDeque(Item x){
+    public LinkedListDeque(T x){
         ItemNode NewNode=new ItemNode(null,x,null);
         size=1;
         sentFront=NewNode;
         sentBack=NewNode;
     }
-    public void addFirst(Item x){
+    public void addFirst(T x){
         ItemNode NewNode=new ItemNode(null,x,null);
         if(size==0){
             sentFront=NewNode;
@@ -41,7 +41,7 @@ public class LinkedListDeque <Item>{
         }
         size++;
     }
-    public void addLast(Item x){
+    public void addLast(T x){
         ItemNode NewNode=new ItemNode(null,x,null);
         if(size==0){
             sentFront=sentBack=NewNode;
@@ -67,9 +67,9 @@ public class LinkedListDeque <Item>{
         }
         System.out.println();
     }
-    public Item removeFirst(){
+    public T removeFirst(){
         if(size==0) return null;
-        Item x=sentFront.item;
+        T x=sentFront.item;
         if(size==1){
             sentFront=sentBack=null;
         }
@@ -79,9 +79,9 @@ public class LinkedListDeque <Item>{
         size--;
         return x;
     }
-    public Item removeLast(){
+    public T removeLast(){
         if(size==0) return null;
-        Item x=sentBack.item;
+        T x=sentBack.item;
         if(size==1){
             sentFront=sentBack=null;
         }
@@ -91,14 +91,14 @@ public class LinkedListDeque <Item>{
         size--;
         return x;
     }
-    public Item get(int index){
+    public T get(int index){
         if(index<0||index>=size) return null;
         ItemNode L=sentFront;
         for(int i=0;i<index;i++)
             L=L.next;
         return L.item;
     }
-    public Item getRecursive(int index){
+    public T getRecursive(int index){
         return get(index);
     }
 

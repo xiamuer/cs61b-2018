@@ -51,6 +51,7 @@ public class ArrayDequeTest {
         //}
         //assertEquals(2, dq.size());
         dq.printDeque();
+
     }
     @Test
     public void PrintTest(){
@@ -58,6 +59,7 @@ public class ArrayDequeTest {
         for(int i=0;i<9;i++)
             dp.addLast(i);
         dp.printDeque();
+
     }
 
 }

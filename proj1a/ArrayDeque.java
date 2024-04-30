@@ -11,7 +11,7 @@ public class ArrayDeque <T>{
         Front=items.length-1;
         Back=0;
     }
-    public void rerize(int capacity){
+    private void rerize(int capacity){
         T[] a=(T[]) new Object[capacity];
         if(Back-1<0) Back=items.length-1;
         else Back=(Back-1)%items.length;
@@ -101,7 +101,7 @@ public class ArrayDeque <T>{
         }
         return items[fist];
     }
-    public T getRecursive(int index){
+    private T getRecursive(int index){
         return get(index);
     }
 
