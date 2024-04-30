@@ -26,8 +26,8 @@ public class ArrayDeque <Item>{
             lennew--;
         }
         Back=(Back+1)%a.length;
-        if(Front-1<0) Front=a.length-1;
-        else Front=(Front-1)%a.length;
+        Front=lennew;
+
         items=a;
     }
     public void addFirst(Item x){

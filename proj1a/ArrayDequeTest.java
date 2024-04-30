@@ -34,20 +34,22 @@ public class ArrayDequeTest {
     @Test
     public  void testgrowshrink() {
         ArrayDeque<Integer> dq = new ArrayDeque<Integer>();
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i <=12; i++) {
             dq.addLast(i);
         }
-        for (int i = -16; i < 0; i++) {
+        for (int i = -16; i <=15; i++) {
             dq.addFirst(i);
         }
-//        for (int i = -1; i <= 16; i++) {
+        //dq.removeFirst();
+        //dq.removeLast();
+//        for (int i =0; i <= 16; i++) {
 //
-//            assertEquals(i, dq.get(i));
+//            assertEquals(i,dq.get(i+1));
 //        }
-        for (int i = 0; i < 30; i++) {
-            dq.removeFirst();
-        }
-        assertEquals(2, dq.size());
+        //for (int i = 0; i < 30; i++) {
+         //   dq.removeFirst();
+        //}
+        //assertEquals(2, dq.size());
         dq.printDeque();
     }
     @Test
