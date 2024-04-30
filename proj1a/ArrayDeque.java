@@ -1,18 +1,18 @@
 import java.awt.*;
 
-public class ArrayDeque <Item>{
-    private Item[] items;
+public class ArrayDeque <T>{
+    private T[] items;
     private int size;
     private int Front;
     private int Back;
     public ArrayDeque() {
-        items=(Item[]) new Object[8];
+        items=(T[]) new Object[8];
         size=0;
         Front=items.length-1;
         Back=0;
     }
     public void rerize(int capacity){
-        Item[] a=(Item[]) new Object[capacity];
+        T[] a=(T[]) new Object[capacity];
         if(Back-1<0) Back=items.length-1;
         else Back=(Back-1)%items.length;
         for(int i=0;i<=Back;i++){
@@ -30,7 +30,7 @@ public class ArrayDeque <Item>{
 
         items=a;
     }
-    public void addFirst(Item x){
+    public void addFirst(T x){
         if(size==items.length){
             rerize((int)(Math.round(size*2)));
         }
@@ -43,7 +43,7 @@ public class ArrayDeque <Item>{
         }
         size+=1;
     }
-    public void addLast(Item x){
+    public void addLast(T x){
         if(size==items.length){
             rerize((int)(Math.round(size*2)));
         }
@@ -68,17 +68,17 @@ public class ArrayDeque <Item>{
         }
         System.out.println();
     }
-    public Item removeFirst(){
+    public T removeFirst(){
         if(size==0){
             return null;
         }
         Front=(Front+1)%items.length;
-        Item x=items[Front];
+        T x=items[Front];
         size--;
         items[Front]=null;
         return x;
     }
-    public Item removeLast(){
+    public T removeLast(){
         if(size==0){
             return null;
         }
@@ -88,18 +88,21 @@ public class ArrayDeque <Item>{
         else {
             Back=(Back-1)%items.length;
         }
-        Item x=items[Back];
+        T x=items[Back];
         size--;
         items[Back]=null;
         return x;
     }
-    public Item get(int index){
+    public T get(int index){
         if(index<0||index>=items.length) return null;
         int fist=(Front+1)%items.length;
         for(int i=0;i<index;i++){
             fist=(fist+1)%items.length;
         }
         return items[fist];
+    }
+    public T getRecursive(int index){
+        return get(index);
     }
 
 
