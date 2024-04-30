@@ -1,14 +1,11 @@
-
-import static junit.framework.Assert.assertEquals;
-//import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
 
-class ArrayDequeTest {
+public class ArrayDequeTest {
 
     @Test
-    public static void testaddsizeempty() {
-        ArrayDeque<String> dq = new ArrayDeque<>();
+    public void testaddsizeempty() {
+        ArrayDeque<String> dq = new ArrayDeque<String>();
         assertEquals(true, dq.isEmpty());
 
         dq.addFirst("first");
@@ -27,35 +24,38 @@ class ArrayDequeTest {
 
         assertEquals(0, dq.size());
     }
-
-    public ArrayDeque<Integer> create(int[] array) {
-        ArrayDeque<Integer> dq = new ArrayDeque<>();
-        for (int x : array) {
-            dq.addLast(x);
-        }
-        return dq;
-    }
-//    @Test
-//    public static void testgrowshrink() {
-//        ArrayDeque<Integer> dq = new ArrayDeque<Integer>();
-//        for (int i = 0; i < 16; i++) {
-//            dq.addLast(i);
+    //@Test
+//    public void create() {
+//        ArrayDeque<Integer> dq = new ArrayDeque<>();
+//        for (int x : array) {
+//            dq.addLast(x);
 //        }
-//        for (int i = -16; i < 0; i++) {
-//            dq.addFirst(i);
-//        }
-////        for (int i = -1; i <= 16; i++) {
-////
-////            assertEquals(i, dq.get(i));
-////        }
-//        for (int i = 0; i < 30; i++) {
-//            dq.removeFirst();
-//        }
-//        assertEquals(2, dq.size());
-//        dq.printDeque();
 //    }
-    public static void main(String[] args) {
-        testaddsizeempty();
-        //testgrowshrink();
+    @Test
+    public  void testgrowshrink() {
+        ArrayDeque<Integer> dq = new ArrayDeque<Integer>();
+        for (int i = 0; i < 16; i++) {
+            dq.addLast(i);
+        }
+        for (int i = -16; i < 0; i++) {
+            dq.addFirst(i);
+        }
+//        for (int i = -1; i <= 16; i++) {
+//
+//            assertEquals(i, dq.get(i));
+//        }
+        for (int i = 0; i < 30; i++) {
+            dq.removeFirst();
+        }
+        assertEquals(2, dq.size());
+        dq.printDeque();
     }
+    @Test
+    public void PrintTest(){
+        ArrayDeque<Integer> dp=new ArrayDeque<Integer>();
+        for(int i=0;i<9;i++)
+            dp.addLast(i);
+        dp.printDeque();
+    }
+
 }

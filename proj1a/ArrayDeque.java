@@ -1,26 +1,33 @@
+import java.awt.*;
+
 public class ArrayDeque <Item>{
     private Item[] items;
     private int size;
     private int Front;
     private int Back;
-    public ArrayDeque(){
+    public ArrayDeque() {
         items=(Item[]) new Object[8];
         size=0;
-        Front=0;
-        Back=items.length-1;
+        Front=items.length-1;
+        Back=0;
     }
     public void rerize(int capacity){
         Item[] a=(Item[]) new Object[capacity];
-        for(int i=0;i<Back;i++){
+        if(Back-1<0) Back=items.length-1;
+        else Back=(Back-1)%items.length;
+        for(int i=0;i<=Back;i++){
             a[i]=items[i];
         }
         int lenold=items.length;
-        int lennew=a.length;
-        for(int i=lenold-1;i>Front;i++){
-            a[lennew-1]=items[i];
+        int lennew=a.length-1;
+        Front=(Front+1)%items.length;
+        for(int i=lenold-1;i>=Front;i--){
+            a[lennew]=items[i];
             lennew--;
         }
-        Front=lennew;
+        Back=(Back+1)%a.length;
+        if(Front-1<0) Front=a.length-1;
+        else Front=(Front-1)%a.length;
         items=a;
     }
     public void addFirst(Item x){
@@ -52,9 +59,12 @@ public class ArrayDeque <Item>{
     }
     public void printDeque(){
         int first=(Front+1)%items.length;
-        while (first!=Back){
-            System.out.print(items[first]);
-            first=(first+1)/(items.length);
+        int Last=Back;
+        if(Last-1<0) Last=items.length-1;
+            else Last=(Last-1)%items.length;
+        for(int i=0;i<size;i++){
+            System.out.print(items[first]+" ");
+            first=(first+1)%(items.length);
         }
         System.out.println();
     }
