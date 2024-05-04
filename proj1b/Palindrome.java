@@ -15,7 +15,7 @@ public class Palindrome {
         int len=word.length();
         int i=0;
         int j=len-1;
-        while(i!=j){
+        while(i<j){
             if(word.charAt(i)!=word.charAt(j)){
                 return false;
             }
