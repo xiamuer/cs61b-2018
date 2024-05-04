@@ -21,9 +21,10 @@ public class TestPalindrome {
     } //Uncomment this class once you've created your Palindrome class. */
     @Test
     public void TestIsPalidrome(){
-        assertTrue(palindrome.isPalindrome("a"));
-        assertTrue(palindrome.isPalindrome("cac"));
-        assertFalse(palindrome.isPalindrome("cat"));
+        CharacterComparator cc=new OffByN(0);
+        assertTrue(palindrome.isPalindrome("a",cc));
+        assertTrue(palindrome.isPalindrome("cac",cc));
+        assertFalse(palindrome.isPalindrome("cat",cc));
 
     }
 }

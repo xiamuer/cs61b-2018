@@ -24,4 +24,20 @@ public class Palindrome {
         }
         return true;
     }
+    public boolean isPalindrome(String word, CharacterComparator cc){
+        if(word==null) return false;
+        int len=word.length();
+        int i=0;
+        int j=len-1;
+        while(i<j){
+            if(!cc.equalChars(word.charAt(i),word.charAt(j))){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+
+
 }

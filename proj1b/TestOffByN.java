@@ -8,9 +8,11 @@ public class TestOffByN{
     @Test
     public void TestIsOffByOneN(){
         CharacterComparator offByOne5 =new OffByN(5);
+        CharacterComparator offByOne0 =new OffByN(0);
         assertTrue(offByOne5.equalChars('a','f'));
         assertTrue(offByOne5.equalChars('f','a'));
         assertFalse(offByOne5.equalChars('f','h'));
+        assertTrue(offByOne0.equalChars('a','a'));
 
     }
 
