@@ -22,12 +22,12 @@ public class LinkedListDeque <T>{
         size=0;
     }
     //如果创建队列的时候传值了
-    public LinkedListDeque(T x){
-        ItemNode NewNode=new ItemNode(null,x,null);
-        size=1;
-        sentFront=NewNode;
-        sentBack=NewNode;
-    }
+//    public LinkedListDeque(T x){
+//        ItemNode NewNode=new ItemNode(null,x,null);
+//        size=1;
+//        sentFront=NewNode;
+//        sentBack=NewNode;
+//    }
     public void addFirst(T x){
         ItemNode NewNode=new ItemNode(null,x,null);
         if(size==0){
