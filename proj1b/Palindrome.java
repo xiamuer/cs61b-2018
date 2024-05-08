@@ -15,10 +15,10 @@ public class Palindrome {
         if(len==1||len==0) return true;
         int i=0;
         int j=len-1;
-        CharacterComparator cc0=new OffByN(0);
+        //CharacterComparator cc0=new OffByN(0);
         //CharacterComparator cc1=new OffByN(1);
         while(i<j){
-            if(!cc0.equalChars(word.charAt(i),word.charAt(j))){
+            if(word.charAt(i)!=word.charAt(j)){
                 return false;
             }
             i++;

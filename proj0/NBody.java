@@ -5,6 +5,7 @@ public class NBody {
         int N=in.readInt();
         return in.readDouble();
     }
+
     //返回行星数组
     public static Planet[] readPlanets(String Filename){
         In in=new In(Filename);
