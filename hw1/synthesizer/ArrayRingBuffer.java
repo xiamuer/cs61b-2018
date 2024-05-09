@@ -88,9 +88,6 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>{
         }
 
         public T next(){
-            if (!hasNext()) {
-                throw new RuntimeException("No more elements in the buffer");
-            }
             T x=rb[cur];
             cur=(cur+1)%capacity;
             num++;
