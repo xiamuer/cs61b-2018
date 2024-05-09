@@ -9,7 +9,7 @@ public interface BoundedQueue<T>{
     void enqueue(T x);
     T dequeue();
     T peek();
-    //Iterator<T> iterator();
+    Iterator<T> iterator();
     default boolean isEmpty(){
         return fillCount()==0;
     }

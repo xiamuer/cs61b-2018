@@ -10,7 +10,7 @@ public class TestArrayRingBuffer {
     @Test
     public void someTest() {
         ArrayRingBuffer arb = new ArrayRingBuffer(10);
-        arb.dequeue();
+        //arb.dequeue();
         for(int i=0;i<10;i++){
             arb.enqueue(i);
         }
@@ -19,7 +19,7 @@ public class TestArrayRingBuffer {
         }
         for(int i=0;i<10;i++){
             arb.enqueue(i);
-            System.out.print(arb.isFull());
+            //System.out.print(arb.isFull());
         }
 
     }
