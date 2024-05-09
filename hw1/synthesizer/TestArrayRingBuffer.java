@@ -21,6 +21,10 @@ public class TestArrayRingBuffer {
             arb.enqueue(i);
             //System.out.print(arb.isFull());
         }
+        for(Object x:arb){
+            System.out.print(x);
+        }
+
 
     }
 
